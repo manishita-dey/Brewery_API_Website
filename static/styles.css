@@ -1,0 +1,23 @@
+.column{
+  padding : 2% 2% 2% 2%;
+  text-align : center;
+}
+
+body{
+  background-color: #F3E2A9;
+  text-align: center;
+  padding: 5%;
+}
+
+h1{
+  text-align: center;
+  padding: 3%;
+}
+
+.table{
+  align: center;
+}
+
+.home_pg_link{
+  align: left;
+}

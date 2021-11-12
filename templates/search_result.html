@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<h1>Search Result</h1>
+    <a href = {{url_for('home')}} class="home_pg_link">Return to Home Page</a>
+     <table class="table">
+          <!-- This is where you will write the code to render a Bootstrap
+          Table that contains all the information from the
+          cafe-data.csv file. -->
+
+          <thead>
+                <tr>
+
+                    <th scope="col" class = "column">NAME</th>
+                    <th scope="col" class = "column">BREWERY TYPE</th>
+                    <th scope="col" class = "column">STREET</th>
+                    <th scope="col" class = "column">CITY</th>
+                    <th scope="col" class = "column">STATE</th>
+                    <th scope="col" class = "column">COUNTRY</th>
+                    <th scope="col" class = "column">PHONE</th>
+                    <th scope="col" class = "column">WEBSITE</th>
+                </tr>
+          </thead>
+          <tbody>
+            {% for dict in list:%}
+                {% if dict['city'] == city %}
+                <tr>
+                    <td scope="col" class = "column">{{dict['name']}}</td>
+                    <td scope="col" class = "column">{{dict['brewery_type']}}</td>
+                    <td scope="col" class = "column">{{dict['street']}}</td>
+                    <td scope="col" class = "column">{{dict['city']}}</td>
+                    <td scope="col" class = "column">{{dict['state']}}</td>
+                    <td scope="col" class = "column">{{dict['country']}}</td>
+                    <td scope="col" class = "column">{{dict['phone']}}</td>
+                    <td scope="col" class = "column"><a href={{dict['website_url']}}>{{dict['name']}}</a></td>
+                </tr>
+                {% elif city == '' %}
+                    <tr>
+                    <td scope="col" class = "column">{{dict['name']}}</td>
+                    <td scope="col" class = "column">{{dict['brewery_type']}}</td>
+                    <td scope="col" class = "column">{{dict['street']}}</td>
+                    <td scope="col" class = "column">{{dict['city']}}</td>
+                    <td scope="col" class = "column">{{dict['state']}}</td>
+                    <td scope="col" class = "column">{{dict['country']}}</td>
+                    <td scope="col" class = "column">{{dict['phone']}}</td>
+                    <td scope="col" class = "column"><a href={{dict['website_url']}}>{{dict['name']}}</a></td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+          </tbody>
+  	  </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brewery</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1> Welcome to Brewery Palace</h1>
+    <a href = "{{url_for('brewery')}}">All Breweries</a>
+    <h2>OR</h2>
+    <h4>Search for breweries in your City</h4>
+    <form class = 'search_form' action = {{url_for('search')}} method = 'post'>
+        <input type = 'text' placeholder='search term' name='search_text'>
+        <input type = 'text' placeholder="City name" name = 'city_text'>
+        <input type = 'submit' value = 'Search For Brewery'>
+    </form>
+</body>
+</html>
